@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SVG Gallery</title>
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+</head>
+<body>
+  <div class="container mt-4">
+    <h1 class="text-center mb-4">SVG Gallery</h1>
+    <div class="row">
+      <% if (svgFiles.length > 0) { %>
+        <% svgFiles.forEach(file => { %>
+          <div class="col-md-4 col-sm-6 mb-4 text-center">
+            <div class="border p-3 shadow-sm">
+              <img
+                src="/public/<%= file %>"
+                alt="<%= file %>"
+                class="img-fluid"
+                style="max-width: 100px; height: auto;"
+              >
+              <p class="mt-2"><%= file %></p>
+            </div>
+          </div>
+        <% }) %>
+      <% } else { %>
+        <div class="col-12 text-center">
+          <p>No SVG files found in the directory.</p>
+        </div>
+      <% } %>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS Bundle (Optional) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
