@@ -1,3 +1,4 @@
 #!/bin/bash
 
-node dist/run.js $1
+DIST_DIR="node_modules/icon-browser/dist"
+node "$DIST_DIR/run.js" $1
