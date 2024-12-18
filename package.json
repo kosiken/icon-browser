@@ -1,11 +1,9 @@
 {
   "name": "icon-browser",
   "version": "1.0.0",
-  "description": "This project was bootstrapped with Fastify-CLI.",
+  "description": "A small package to browse through icons on the risevest rise global mobile app",
+  "author": "kosiken <allisonkosy@gmail.com> (https://github.com/kosiken)",
   "main": "run.ts",
-  "directories": {
-    "test": "test"
-  },
   "files": [
     "dist",
     "bin",
@@ -13,6 +11,10 @@
   ],
   "bin": {
     "icon-browser": "./bin/cli.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kosiken/icon-browser.git"
   },
   "scripts": {
     "test": "npm run build:ts && tsc -p test/tsconfig.json && c8 node --test -r ts-node/register \"test/**/*.ts\"",
@@ -24,9 +26,8 @@
     "postbuild": "npx cpy-cli './src/**/*.ejs' ./dist/",
     "postinstall": "npx tsc && npm run postbuild"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["risevest", "risevest icons"],
+  "license": "MIT",
   "dependencies": {
     "@fastify/autoload": "^6.0.0",
     "@fastify/sensible": "^6.0.0",
